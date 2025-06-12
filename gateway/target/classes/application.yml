@@ -1,0 +1,26 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/gatewaydb
+    username: gatewayuser
+    password: gatewaypass
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  cloud:
+    gateway:
+      routes:
+        - id: room-service
+          uri: http://room-service:8080
+          predicates:
+            - Path=/rooms/**
+        - id: user-service
+          uri: http://user-service:8080
+          predicates:
+            - Path=/users/**
+        - id: booking-service
+          uri: http://booking-service:8080
+          predicates:
+            - Path=/bookings/** 
