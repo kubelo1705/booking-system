@@ -1,4 +1,0 @@
-com\booking\gateway\filter\GlobalGatewayFilter.class
-com\booking\gateway\model\UserAction.class
-com\booking\gateway\repository\UserActionRepository.class
-com\booking\gateway\GatewayApplication.class
